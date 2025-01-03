@@ -11,6 +11,16 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
+    dependencies = {
+      {
+        "SmiteshP/nvim-navbuddy",
+        dependencies = {
+          "SmiteshP/nvim-navic",
+          "MunifTanjim/nui.nvim",
+        },
+        opts = { lsp = { auto_attach = true } },
+      },
+    },
     config = function()
       require "configs.lspconfig"
     end,
@@ -36,15 +46,10 @@ return {
     },
   },
   {
-    "nvimdev/lspsaga.nvim",
+    "j-hui/fidget.nvim",
     config = function()
-      require "configs.saga"
+      require "configs.fidget"
     end,
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter", -- optional
-      "nvim-tree/nvim-web-devicons", -- optional
-    },
-    event = "LspAttach",
   },
   {
     "mrcjkb/rustaceanvim",
