@@ -29,7 +29,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "pyright",
+        "python-lsp-server",
         "html-lsp",
         "black",
         "clang-format",
