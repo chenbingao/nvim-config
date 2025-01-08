@@ -29,7 +29,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "python-lsp-server",
+        "pyright",
         "html-lsp",
         "black",
         "clang-format",
@@ -101,13 +101,21 @@ return {
     },
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "python",
+        "toml",
+        "yaml",
+        "rust",
+        "c",
+      },
+    },
+  },
 }
