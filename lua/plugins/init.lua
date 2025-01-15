@@ -100,7 +100,6 @@ return {
       "nvim-treesitter/nvim-treesitter",
     },
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -118,4 +117,5 @@ return {
       },
     },
   },
+  { "sheerun/vim-polyglot" },
 }
