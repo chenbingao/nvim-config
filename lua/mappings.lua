@@ -55,6 +55,13 @@ map("n", "<leader>ds", "<cmd>Trouble diagnostics toggle focus=true<CR>", { desc 
 
 map("i", "jk", "<ESC>")
 
+map(
+  "v",
+  ",y",
+  require("osc52").copy_visual, -- 使用 OSC 52 复制
+  { desc = "OSC 52 copy" }
+)
+
 local nomap = vim.keymap.del
 
 nomap("n", "<C-s>")

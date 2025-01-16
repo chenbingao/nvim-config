@@ -118,4 +118,10 @@ return {
     },
   },
   { "sheerun/vim-polyglot" },
+  {
+    "ojroques/nvim-osc52",
+    config = function()
+      require "configs.nvim-osc52"
+    end,
+  },
 }
