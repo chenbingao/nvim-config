@@ -42,6 +42,7 @@ return {
         "rust-analyzer",
         "stylua",
         "typescript-language-server",
+        "buf",
       },
     },
   },
