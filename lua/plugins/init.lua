@@ -126,4 +126,8 @@ return {
       require "configs.nvim-osc52"
     end,
   },
+  {
+    "tpope/vim-surround",
+    lazy = false,
+  },
 }

@@ -5,6 +5,7 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", "<leader>fs", "<cmd> w <cr>", { desc = "file save" })
+map("n", "<leader>fS", "<cmd> wa <cr>", { desc = "all file save" })
 
 map("n", "K", function()
   vim.lsp.buf.hover()
