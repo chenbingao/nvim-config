@@ -22,7 +22,7 @@ return {
       },
     },
     config = function()
-      require "configs.lspconfig"
+      require "configs.nvim-lspconfig"
     end,
   },
   {
@@ -42,6 +42,7 @@ return {
         "rust-analyzer",
         "stylua",
         "typescript-language-server",
+        "rescript-language-server",
         "buf",
       },
     },
@@ -116,6 +117,7 @@ return {
         "rust",
         "c",
         "proto",
+        "rescript",
       },
     },
   },
@@ -129,5 +131,12 @@ return {
   {
     "tpope/vim-surround",
     lazy = false,
+  },
+  {
+    "rescript-lang/vim-rescript",
+    ft = "rescript",
+    config = function()
+      require "configs.vim-rescript"
+    end,
   },
 }
