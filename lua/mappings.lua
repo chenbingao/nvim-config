@@ -4,7 +4,6 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>fs", "<cmd> w <cr>", { desc = "file save" })
 
 map("n", "K", function()
@@ -54,6 +53,7 @@ map("n", ",n", "<cmd>Trouble diagnostics toggle filter.buf=0<CR>", { desc = "Buf
 map("n", "<leader>ds", "<cmd>Trouble diagnostics toggle focus=true<CR>", { desc = "Diagnostics (Trouble)" })
 
 map("i", "jk", "<ESC>")
+map("i", "kj", "<ESC>")
 
 map(
   "v",
