@@ -4,7 +4,7 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 -- EXAMPLE
-local servers = { "html", "cssls", "clangd", "pyright", "buf_ls", "ts_ls" }
+local servers = { "html", "cssls", "clangd", "pyright", "buf_ls", "ts_ls", "jsonls" }
 local nvlsp = require "nvchad.configs.lspconfig"
 
 local custom_overrides = {
