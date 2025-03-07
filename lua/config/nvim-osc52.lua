@@ -1,3 +1,3 @@
 require("osc52").setup {
-  max_length = 0,
+    max_length = 0,
 }

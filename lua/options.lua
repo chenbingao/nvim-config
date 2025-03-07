@@ -1,29 +1,30 @@
-require "nvchad.options"
+-- Hint: use `:h <option>` to figure out the meaning if needed
+vim.opt.clipboard = "unnamedplus" -- use system clipboard
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+vim.opt.mouse = "a" -- allow the mouse to be used in Nvim
 
--- add yours here!
+-- Tab
+vim.opt.tabstop = 4 -- number of visual spaces per TAB
+vim.opt.softtabstop = 4 -- number of spacesin tab when editing
+vim.opt.shiftwidth = 4 -- insert 4 spaces on a tab
+vim.opt.expandtab = true -- tabs are spaces, mainly because of python
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
+-- UI config
+vim.opt.number = true -- show absolute number
+vim.opt.relativenumber = true -- add numbers to each line on the left side
+vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizontally
+vim.opt.splitbelow = true -- open new vertical split bottom
+vim.opt.splitright = true -- open new horizontal splits right
+vim.opt.termguicolors = true -- enabl 24-bit RGB color in the TUI
+vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
+vim.wo.cursorcolumn = true
+
+-- Searching
+vim.opt.incsearch = true -- search as characters are entered
+vim.opt.hlsearch = false -- do not highlight matches
+vim.opt.ignorecase = true -- ignore case in searches by default
+vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
+
 vim.lsp.inlay_hint.enable(true)
-vim.o.clipboard = "unnamed,unnamedplus"
--- 使用 `p` 键在 Telescope 查找窗口中粘贴剪贴板内容
--- 为 Telescope 查找窗口的输入框映射 `p` 键粘贴剪贴板内容
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "telescopePrompt",
-  callback = function()
-    vim.api.nvim_buf_set_keymap(0, "t", "p", "<C-R>+", { noremap = true, silent = true })
-  end,
-})
--- 在 Telescope 查找窗口中自动粘贴剪贴板内容
-local function paste_clipboard_to_telescope()
-  -- 将剪贴板内容粘贴到 Telescope 搜索框
-  vim.fn.setreg("/", vim.fn.getreg "+")
-end
-
--- 在打开 Telescop 查找窗口时调用函数
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "telescopePrompt",
-  callback = paste_clipboard_to_telescope,
-})
 
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = true}"

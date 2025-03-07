@@ -1,4 +1,9 @@
-dofile(vim.g.base46_cache .. "nvimtree")
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
 
 local ui = vim.api.nvim_list_uis()[1]
 local gheight = ui.height
@@ -8,8 +13,9 @@ local gwidth = ui.width
 local width = math.floor(gwidth * 0.75)
 local height = math.floor(gheight * 0.75)
 
-return {
-  filters = { dotfiles = false },
+-- OR setup with some options
+require("nvim-tree").setup {
+  filters = { dotfiles = false, custom = { "^.git$" } },
   disable_netrw = true,
   hijack_cursor = true,
   sync_root_with_cwd = true,

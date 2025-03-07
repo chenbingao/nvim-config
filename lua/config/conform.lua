@@ -11,6 +11,7 @@ require("conform").setup {
     css = { "prettierd", "prettier", stop_after_first = true },
     proto = { "buf" },
     json = { "prettierd", "prettier", stop_after_first = true },
+    zig = { "zigfmt" },
   },
   format_on_save = {
     -- These options will be passed to conform.format()
@@ -19,9 +20,9 @@ require("conform").setup {
   },
 }
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format { bufnr = args.buf }
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   callback = function(args)
+--     require("conform").format { bufnr = args.buf }
+--   end,
+-- })
