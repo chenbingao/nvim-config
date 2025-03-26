@@ -22,7 +22,7 @@ vim.wo.cursorcolumn = true
 -- Searching
 vim.opt.incsearch = true -- search as characters are entered
 vim.opt.hlsearch = false -- do not highlight matches
-vim.opt.ignorecase = true -- ignore case in searches by default
+vim.opt.ignorecase = false -- ignore case in searches by default
 vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
 
 vim.lsp.inlay_hint.enable(true)
