@@ -194,4 +194,13 @@ return {
       require "config.neotest"
     end,
   },
+  { "neanias/everforest-nvim", lazy = false, priority = 1000 },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    config = function()
+      require "config.ident_blankline"
+    end,
+  },
 }
