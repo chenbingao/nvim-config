@@ -49,11 +49,20 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-local lspconfig = require "lspconfig"
+vim.lsp.enable "pyright"
+vim.lsp.config("pyright", require "lsp.python")
 
-lspconfig.pyright.setup(require "lsp.python")
-lspconfig.lua_ls.setup(require "lsp.lua")
-lspconfig.buf_ls.setup(require "lsp.proto")
-lspconfig.jsonls.setup(require "lsp.json")
-lspconfig.zls.setup(require "lsp.zig")
-lspconfig.clangd.setup(require "lsp.c")
+vim.lsp.enable "lua_ls"
+vim.lsp.config("lua_ls", require "lsp.lua")
+
+vim.lsp.enable "buf_ls"
+vim.lsp.config("buf_ls", require "lsp.proto")
+
+vim.lsp.enable "jsonls"
+vim.lsp.config("jsonls", require "lsp.json")
+
+vim.lsp.enable "zls"
+vim.lsp.config("zls", require "lsp.zig")
+
+vim.lsp.enable "clangd"
+vim.lsp.config("clangd", require "lsp.c")
