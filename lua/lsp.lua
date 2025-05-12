@@ -19,6 +19,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "html-lsp",
         "black",
         "clangd",
+        "cmake-language-server",
+        "gersemi",
         "codelldb",
         "css-lsp",
         "isort",
@@ -66,3 +68,6 @@ vim.lsp.config("zls", require "lsp.zig")
 
 vim.lsp.enable "clangd"
 vim.lsp.config("clangd", require "lsp.c")
+
+vim.lsp.enable "cmake"
+vim.lsp.config("cmake", require "lsp.cmake")
