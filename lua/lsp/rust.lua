@@ -37,6 +37,9 @@ vim.g.rustaceanvim = {
       vim.keymap.set("n", "gt", builtin.lsp_type_definitions, bufopts)
       vim.keymap.set("n", "gi", builtin.lsp_implementations, bufopts)
       vim.keymap.set("n", "gr", builtin.lsp_references, bufopts)
+      -- vim.keymap.set("n", ",dr", function()
+      --   vim.cmd.RustLsp "testables"
+      -- end, bufopts)
 
       vim.keymap.set("n", "<leader>lc", function()
         require("actions-preview").code_actions()

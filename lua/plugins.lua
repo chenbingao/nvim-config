@@ -185,10 +185,14 @@ return {
   {
     "nvim-neotest/neotest",
     dependencies = {
-      "nvim-neotest/nvim-nio",
+      "nvim-treesitter/nvim-treesitter",
       "nvim-lua/plenary.nvim",
       "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/nvim-nio",
+      "nvim-neotest/neotest-python",
+      "nvim-neotest/neotest-plenary",
+      "lawrence-laz/neotest-zig",
+      "rouge8/neotest-rust",
     },
     config = function()
       require "config.neotest"

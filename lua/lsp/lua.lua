@@ -35,6 +35,7 @@ return {
     Lua = {
       diagnostics = {
         globals = { "vim" },
+        disable = { "different-requires" },
       },
     },
   },
