@@ -104,11 +104,18 @@ return {
       require("lsp_signature").setup(opts)
     end,
   },
+  -- {
+  --   "j-hui/fidget.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require "config.fidget"
+  --   end,
+  -- },
   {
-    "j-hui/fidget.nvim",
+    "linrongbin16/lsp-progress.nvim",
     lazy = false,
     config = function()
-      require "config.fidget"
+      require "config.lsp-progress"
     end,
   },
   {
