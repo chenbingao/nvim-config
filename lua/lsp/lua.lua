@@ -4,9 +4,6 @@ local builtin = require "telescope.builtin"
 return {
   on_attach = function(_, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
-    -- vim.keymap.set("n", "K", function()
-    --   require("lsp_signature").toggle_float_win()
-    -- end, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 
     vim.keymap.set("n", "gn", function()
