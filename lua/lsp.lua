@@ -71,3 +71,6 @@ vim.lsp.config("clangd", require "lsp.c")
 
 vim.lsp.enable "cmake"
 vim.lsp.config("cmake", require "lsp.cmake")
+
+vim.lsp.enable "rescriptls"
+vim.lsp.config("rescriptls", require "lsp.rescript")
