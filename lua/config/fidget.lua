@@ -47,7 +47,7 @@ if ok then
         relative = "win", -- 相对于编辑器窗口
         border = "single",
         -- winblend = 0,
-        zindex = 100,
+        zindex = 45,
       },
       configs = { default = local_config },
     },
