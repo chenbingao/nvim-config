@@ -33,6 +33,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "rescript-language-server",
         "buf",
         "zls",
+        "haskell-language-server",
+        "fourmolu",
       }
       for _, tool in ipairs(tools) do
         local is_installed = false
@@ -74,3 +76,6 @@ vim.lsp.config("cmake", require "lsp.cmake")
 
 vim.lsp.enable "rescriptls"
 vim.lsp.config("rescriptls", require "lsp.rescript")
+
+vim.lsp.enable "hls"
+vim.lsp.config("hls", require "lsp.haskell")

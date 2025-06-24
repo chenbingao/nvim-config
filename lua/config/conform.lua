@@ -13,6 +13,7 @@ require("conform").setup {
     json = { "prettierd", "prettier", stop_after_first = true },
     zig = { "zigfmt" },
     cmake = { "gersemi" },
+    haskell = { "fourmolu" },
   },
   format_on_save = {
     -- These options will be passed to conform.format()
