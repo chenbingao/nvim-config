@@ -22,7 +22,7 @@ if ok then
         "rg",
         "--color=never",
         "--no-heading",
-        -- "--with-filename",
+        "--with-filename",
         "--line-number",
         "--column",
         "--smart-case",
@@ -41,8 +41,8 @@ if ok then
       layout_config = {
         horizontal = {
           prompt_position = "bottom",
-          preview_width = 0.5,
-          results_width = 0.87,
+          preview_width = 0.4,
+          results_width = 0.6,
         },
         vertical = {
           mirror = false,
