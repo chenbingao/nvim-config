@@ -48,6 +48,9 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>ds", builtin.diagnostics, opts)
 vim.keymap.set("n", "<leader>lo", builtin.lsp_document_symbols, opts)
 
+-- replace pannel
+vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', opts)
+
 -----------------
 -- Insert mode --
 -----------------

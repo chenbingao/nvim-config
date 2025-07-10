@@ -192,4 +192,11 @@ return {
     end,
   },
   { "limitLiu/nvim-treesitter-rescript" },
+  {
+    "nvim-lua/plenary.nvim",
+    dependencies = {
+      "nvim-pack/nvim-spectre",
+      "folke/trouble.nvim",
+    },
+  },
 }
