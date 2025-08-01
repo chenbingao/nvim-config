@@ -33,7 +33,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "rescript-language-server",
         "buf",
         "zls",
-        "haskell-language-server",
         "fourmolu",
       }
       for _, tool in ipairs(tools) do
