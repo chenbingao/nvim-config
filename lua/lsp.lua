@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "rescript-language-server",
         "buf",
         "zls",
-        "fourmolu",
+        "ormolu",
       }
       for _, tool in ipairs(tools) do
         local is_installed = false
