@@ -17,15 +17,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
       local tools = {
         "pyright",
         "html-lsp",
-        "black",
         "clangd",
         "cmake-language-server",
         "gersemi",
         "codelldb",
         "css-lsp",
-        "isort",
         "lua-language-server",
-        "prettier",
         "prettierd",
         "rust-analyzer",
         "stylua",
@@ -52,9 +49,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-vim.lsp.enable "pyright"
-vim.lsp.config("pyright", require "lsp.python")
-
 vim.lsp.enable "lua_ls"
 vim.lsp.config("lua_ls", require "lsp.lua")
 
@@ -78,3 +72,6 @@ vim.lsp.config("rescriptls", require "lsp.rescript")
 
 vim.lsp.enable "hls"
 vim.lsp.config("hls", require "lsp.haskell")
+
+vim.lsp.enable "ts_ls"
+vim.lsp.config("ts_ls", require "lsp.ts")

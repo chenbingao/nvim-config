@@ -26,8 +26,6 @@ return {
     vim.keymap.set("n", "<leader>lr", function()
       vim.lsp.buf.rename()
     end, bufopts)
-
-    vim.keymap.set("n", ",v", "<cmd>VenvSelect<CR>", bufopts)
   end,
   capabilities = capabilities,
 }
