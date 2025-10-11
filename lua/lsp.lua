@@ -75,3 +75,6 @@ vim.lsp.config("hls", require "lsp.haskell")
 
 vim.lsp.enable "ts_ls"
 vim.lsp.config("ts_ls", require "lsp.ts")
+
+vim.lsp.enable "sourcekit"
+vim.lsp.config("sourcekit", require "lsp.swift")

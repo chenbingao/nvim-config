@@ -47,7 +47,8 @@ vim.keymap.set("n", "<leader>fw", builtin.live_grep, opts)
 vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
 vim.keymap.set("n", "<leader>ds", builtin.diagnostics, opts)
-vim.keymap.set("n", "<leader>lo", builtin.lsp_document_symbols, opts)
+
+vim.keymap.set("n", "<leader>lo", "<cmd>Navbuddy<CR>", opts)
 
 -- replace pannel
 vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', opts)

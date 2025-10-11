@@ -10,6 +10,26 @@ return {
     },
   },
   {
+    "utilyre/barbecue.nvim",
+    name = "barbecue",
+    version = "*",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    opts = {},
+  },
+  {
+    "hasansujon786/nvim-navbuddy",
+    requires = {
+      "neovim/nvim-lspconfig",
+      "SmiteshP/nvim-navic",
+      "MunifTanjim/nui.nvim",
+      "numToStr/Comment.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+  },
+  {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -184,5 +204,15 @@ return {
       "nvim-pack/nvim-spectre",
       "folke/trouble.nvim",
     },
+  },
+  {
+    "wojciech-kulik/xcodebuild.nvim",
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "MunifTanjim/nui.nvim",
+    },
+    config = function()
+      require "config.xcodebuild"
+    end,
   },
 }
