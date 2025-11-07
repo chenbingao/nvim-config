@@ -3,6 +3,10 @@ local builtin = require "telescope.builtin"
 
 return {
   on_attach = function(_, bufnr)
+    vim.opt_local.tabstop = 2
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.expandtab = true
+
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
 

@@ -15,7 +15,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
       local mason = require "mason-registry"
       local installed = mason.get_installed_package_names()
       local tools = {
-        "pyright",
         "html-lsp",
         "clangd",
         "cmake-language-server",

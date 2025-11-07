@@ -12,6 +12,7 @@ require("conform").setup {
     zig = { "zigfmt" },
     cmake = { "gersemi" },
     haskell = { "ormolu" },
+    swift = { "swiftformat" },
   },
   format_on_save = {
     -- These options will be passed to conform.format()
