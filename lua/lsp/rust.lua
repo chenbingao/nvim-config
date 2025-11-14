@@ -20,11 +20,13 @@ local builtin = require "telescope.builtin"
 vim.g.rustaceanvim = {
   server = {
     on_attach = function(_, bufnr)
-      vim.opt_local.tabstop = 2
-      vim.opt_local.shiftwidth = 2
-      vim.opt_local.expandtab = true
-
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+      vim.bo[bufnr].tabstop = 2
+      vim.bo[bufnr].softtabstop = 2
+      vim.bo[bufnr].shiftwidth = 2
+      vim.bo[bufnr].expandtab = true
+
       vim.keymap.set("n", "K", function()
         vim.cmd.RustLsp { "hover", "actions" }
       end, bufopts)
@@ -41,9 +43,6 @@ vim.g.rustaceanvim = {
       vim.keymap.set("n", "gt", builtin.lsp_type_definitions, bufopts)
       vim.keymap.set("n", "gi", builtin.lsp_implementations, bufopts)
       vim.keymap.set("n", "gr", builtin.lsp_references, bufopts)
-      -- vim.keymap.set("n", ",dr", function()
-      --   vim.cmd.RustLsp "testables"
-      -- end, bufopts)
 
       vim.keymap.set("n", "<leader>lc", function()
         require("actions-preview").code_actions()
