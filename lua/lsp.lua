@@ -27,7 +27,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "stylua",
         "typescript-language-server",
         "rescript-language-server",
-        "buf",
+        "pbls",
         "zls",
         "ormolu",
       }
@@ -51,8 +51,8 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.lsp.enable "lua_ls"
 vim.lsp.config("lua_ls", require "lsp.lua")
 
-vim.lsp.enable "buf_ls"
-vim.lsp.config("buf_ls", require "lsp.proto")
+vim.lsp.enable "pbls"
+vim.lsp.config("pbls", require "lsp.proto")
 
 vim.lsp.enable "jsonls"
 vim.lsp.config("jsonls", require "lsp.json")

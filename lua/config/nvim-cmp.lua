@@ -10,7 +10,18 @@ cmp.setup {
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
+      vim.opt.lazyredraw = true
+      local success, err = pcall(function()
+        require("luasnip").lsp_expand(args.body)
+        vim.schedule(function()
+          vim.api.nvim_input "<Esc>"
+          vim.opt.lazyredraw = false
+        end)
+      end)
+      if not success then
+        vim.opt.lazyredraw = false
+        print("Error during snippet expansion: ", err)
+      end
     end,
   },
   window = {
