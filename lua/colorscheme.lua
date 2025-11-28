@@ -1,3 +1,3 @@
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "nordfox"
 vim.o.background = "dark"
 vim.g.python3_host_prog = "/usr/bin/python3"

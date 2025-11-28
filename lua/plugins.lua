@@ -215,4 +215,12 @@ return {
       require "config.xcodebuild"
     end,
   },
+  "limitLiu/melange-nvim",
+  {
+    "rebelot/kanagawa.nvim",
+    config = function()
+      require "config.theme.kanagawa"
+    end,
+  },
+  { "EdenEast/nightfox.nvim" },
 }

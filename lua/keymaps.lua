@@ -57,11 +57,6 @@ vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', opt
 -- Insert mode --
 -----------------
 
-vim.keymap.set("i", "jk", "<ESC>", opts)
-vim.keymap.set("i", "kj", "<ESC>", opts)
-vim.keymap.set("i", "kk", "<ESC>", opts)
-vim.keymap.set("i", "jj", "<ESC>", opts)
-
 vim.keymap.set("i", "<C-f>", "<Right>", opts)
 vim.keymap.set("i", "<C-b>", "<Left>", opts)
 vim.keymap.set("i", "<C-p>", "<Up>", opts)
