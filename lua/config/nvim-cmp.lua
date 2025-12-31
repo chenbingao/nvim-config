@@ -12,7 +12,8 @@ cmp.setup {
     expand = function(args)
       vim.opt.lazyredraw = true
       local success, err = pcall(function()
-        require("luasnip").lsp_expand(args.body)
+        -- require("luasnip").lsp_expand(args.body)
+        vim.fn["vsnip#anonymous"](args.body)
         vim.schedule(function()
           vim.api.nvim_input "<Esc>"
           vim.opt.lazyredraw = false
@@ -65,7 +66,8 @@ cmp.setup {
   -- Set source precedence
   sources = cmp.config.sources {
     { name = "nvim_lsp", group_index = 1 }, -- For nvim-lsp
-    { name = "luasnip", group_index = 2 }, -- For luasnip user
+    -- { name = "luasnip", group_index = 2 }, -- For luasnip user
+    { name = "vsnip", group_index = 2 }, -- For luasnip user
     { name = "buffer", group_index = 3 }, -- For buffer word completion
     { name = "path", group_index = 4 }, -- For path completion
   },

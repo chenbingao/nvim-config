@@ -36,11 +36,6 @@ vim.keymap.set("n", ",tr", function()
   require("neotest").run.run()
 end, opts)
 
-vim.keymap.set("n", "<C-u>", "9k", opts)
-vim.keymap.set("n", "<C-d>", "9j", opts)
-vim.keymap.set("n", "<C-e>", "$", opts)
-vim.keymap.set("n", "<C-a>", "^", opts)
-
 local builtin = require "telescope.builtin"
 vim.keymap.set("n", ",o", builtin.find_files, opts)
 vim.keymap.set("n", "<leader>fw", builtin.live_grep, opts)
