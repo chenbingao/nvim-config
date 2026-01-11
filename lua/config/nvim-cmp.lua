@@ -113,7 +113,3 @@ cmp.setup.cmdline(":", {
   matching = { disallow_symbol_nonprefix_matching = false },
 })
 
-local ok, cmp_auto_pairs = pcall(require, "nvim-autopairs.completion.cmp")
-if ok then
-  cmp.event:on("confirm_done", cmp_auto_pairs.on_confirm_done())
-end

@@ -28,3 +28,16 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 vim.lsp.inlay_hint.enable(true)
 
 vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = true}"
+
+-- 开启自动读取
+vim.opt.autoread = true
+
+-- 当文件被修改时，自动重新读取文件 (需要触发某些事件)
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = vim.api.nvim_create_augroup("AutoCheckTime", { clear = true }),
+  callback = function()
+    if vim.fn.getcmdwintype() == "" then
+      vim.cmd "checktime"
+    end
+  end,
+})

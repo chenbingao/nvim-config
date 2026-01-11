@@ -95,12 +95,6 @@ return {
   },
   "lewis6991/gitsigns.nvim",
   {
-    "windwp/nvim-autopairs",
-    config = function()
-      require "config.nvim-autopairs"
-    end,
-  },
-  {
     "ojroques/nvim-osc52",
     config = function()
       require "config.nvim-osc52"
