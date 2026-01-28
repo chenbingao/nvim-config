@@ -28,7 +28,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "typescript-language-server",
         "rescript-language-server",
         "pbls",
-        "zls",
         "ormolu",
       }
       for _, tool in ipairs(tools) do
