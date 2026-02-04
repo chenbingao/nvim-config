@@ -19,6 +19,7 @@ return {
     },
     opts = {},
   },
+  { "nvim-pack/nvim-spectre" },
   {
     "hasansujon786/nvim-navbuddy",
     requires = {
