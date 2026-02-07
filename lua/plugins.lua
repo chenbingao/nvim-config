@@ -212,7 +212,6 @@ return {
       require "config.xcodebuild"
     end,
   },
-  "limitLiu/melange-nvim",
   {
     "rebelot/kanagawa.nvim",
     config = function()

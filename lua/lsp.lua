@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
       local tools = {
         "html-lsp",
         "clangd",
-        "cmake-language-server",
+        "neocmakelsp",
         "gersemi",
         "codelldb",
         "css-lsp",
@@ -80,3 +80,6 @@ vim.lsp.config("sourcekit", require "lsp.swift")
 
 vim.lsp.enable "autotools_ls"
 vim.lsp.config("autotools_ls", require "lsp.make")
+
+vim.lsp.enable "neocmake"
+vim.lsp.config("neocmake", require "lsp.cmake")
