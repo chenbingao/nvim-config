@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
         "rescript-language-server",
         "pbls",
         "ormolu",
+        "autotools-language-server",
       }
       for _, tool in ipairs(tools) do
         local is_installed = false
@@ -76,3 +77,6 @@ vim.lsp.config("ts_ls", require "lsp.ts")
 
 vim.lsp.enable "sourcekit"
 vim.lsp.config("sourcekit", require "lsp.swift")
+
+vim.lsp.enable "autotools_ls"
+vim.lsp.config("autotools_ls", require "lsp.make")
