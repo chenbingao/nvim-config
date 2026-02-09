@@ -1,78 +1,84 @@
--- define common options
-local opts = {
-  noremap = true, -- non-recursive
-  silent = true, -- do not show message
-}
+local map = vim.keymap.set
 
 -----------------
 -- Normal mode --
 -----------------
 
--- Hint: see `:h vim.map.set()`
--- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
-vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
-vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
-vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
-vim.keymap.set("n", "<C-i>", "<C-i>", opts)
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+map("n", "<C-i>", "<C-i>", { desc = "Jump forward" })
 
-vim.keymap.set("n", "q", "<Nop>", opts)
-vim.keymap.set("n", "<leader>fs", "<cmd>w<CR>", opts)
-vim.keymap.set("n", "<leader>fS", "<cmd>wa<CR>", opts)
+map("n", "q", "<Nop>", { desc = "Disable macro recording" })
+map("n", "<leader>fs", "<cmd>w<CR>", { desc = "Save file" })
+map("n", "<leader>fS", "<cmd>wa<CR>", { desc = "Save all files" })
 
--- nvim_tree
-vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFile<CR>", opts)
-vim.keymap.set("n", "<Tab>", "<cmd>BufferNext<CR>", opts)
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferPrevious<CR>", opts)
+-- NvimTree
+map("n", "<leader>e", "<cmd>NvimTreeFindFile<CR>", { desc = "Find file in tree" })
 
-vim.keymap.set("n", ",h", "<cmd>BufferCloseBuffersLeft<CR>", opts)
-vim.keymap.set("n", ",l", "<cmd>BufferCloseBuffersRight<CR>", opts)
-vim.keymap.set("n", ",j", "<cmd>BufferCloseAllButCurrent<CR>", opts)
-vim.keymap.set("n", ",k", "<cmd>BufferClose<CR>", opts)
-vim.keymap.set("n", ",r", "<cmd>e<CR>", opts)
-vim.keymap.set("n", ",tt", function()
+-- Buffer navigation
+map("n", "<Tab>", "<cmd>BufferNext<CR>", { desc = "Next buffer" })
+map("n", "<S-Tab>", "<cmd>BufferPrevious<CR>", { desc = "Previous buffer" })
+map("n", ",h", "<cmd>BufferCloseBuffersLeft<CR>", { desc = "Close buffers to the left" })
+map("n", ",l", "<cmd>BufferCloseBuffersRight<CR>", { desc = "Close buffers to the right" })
+map("n", ",j", "<cmd>BufferCloseAllButCurrent<CR>", { desc = "Close all other buffers" })
+map("n", ",k", "<cmd>BufferClose<CR>", { desc = "Close current buffer" })
+map("n", ",r", "<cmd>e<CR>", { desc = "Reload current file" })
+
+-- Neotest
+map("n", ",tt", function()
   require("neotest").output_panel.toggle()
-end, opts)
-vim.keymap.set("n", ",tr", function()
+end, { desc = "Toggle test output panel" })
+map("n", ",tr", function()
   require("neotest").run.run()
-end, opts)
+end, { desc = "Run nearest test" })
 
-local builtin = require "telescope.builtin"
-vim.keymap.set("n", ",o", builtin.find_files, opts)
-vim.keymap.set("n", "<leader>fw", builtin.live_grep, opts)
-vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
-vim.keymap.set("n", "<leader>ds", builtin.diagnostics, opts)
+-- Telescope
+map("n", ",o", function()
+  require("telescope.builtin").find_files()
+end, { desc = "Find files" })
+map("n", "<leader>fw", function()
+  require("telescope.builtin").live_grep()
+end, { desc = "Live grep" })
+map("n", "<leader>fb", function()
+  require("telescope.builtin").buffers()
+end, { desc = "Find buffers" })
+map("n", "<leader>fh", function()
+  require("telescope.builtin").help_tags()
+end, { desc = "Help tags" })
+map("n", "<leader>ds", function()
+  require("telescope.builtin").diagnostics()
+end, { desc = "Diagnostics" })
 
-vim.keymap.set("n", "<leader>lo", "<cmd>Navbuddy<CR>", opts)
+map("n", "<leader>lo", "<cmd>Navbuddy<CR>", { desc = "Open Navbuddy" })
 
--- replace pannel
-vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', opts)
+-- Replace panel
+map("n", "<leader>S", function()
+  require("spectre").toggle()
+end, { desc = "Toggle search & replace" })
 
 -----------------
 -- Insert mode --
 -----------------
 
-vim.keymap.set("i", "<C-f>", "<Right>", opts)
-vim.keymap.set("i", "<C-b>", "<Left>", opts)
-vim.keymap.set("i", "<C-p>", "<Up>", opts)
-vim.keymap.set("i", "<C-n>", "<Down>", opts)
-vim.keymap.set("i", "<C-e>", "<End>", opts)
-vim.keymap.set("i", "<C-a>", "<C-o>I", opts)
+map("i", "<C-f>", "<Right>", { desc = "Move cursor right" })
+map("i", "<C-b>", "<Left>", { desc = "Move cursor left" })
+map("i", "<C-p>", "<Up>", { desc = "Move cursor up" })
+map("i", "<C-n>", "<Down>", { desc = "Move cursor down" })
+map("i", "<C-e>", "<End>", { desc = "Move to end of line" })
+map("i", "<C-a>", "<C-o>I", { desc = "Move to start of line" })
 
 -----------------
 -- Visual mode --
 -----------------
 
-vim.keymap.set("v", "v", "<Esc>", opts)
+map("v", "v", "<Esc>", { desc = "Exit visual mode" })
 
-vim.keymap.set(
-  "v",
-  ",y",
-  require("osc52").copy_visual, -- 使用 OSC 52 复制
-  opts
-)
+map("v", ",y", function()
+  require("osc52").copy_visual()
+end, { desc = "Copy with OSC52" })
 
--- Hint: start visual mode with the same area as the previous area and the same mode
-vim.keymap.set("v", "<", "<gv", opts)
-vim.keymap.set("v", ">", ">gv", opts)
+map("v", "<", "<gv", { desc = "Indent left and reselect" })
+map("v", ">", ">gv", { desc = "Indent right and reselect" })

@@ -3,4 +3,6 @@ require "config.lazy"
 require "options"
 require "keymaps"
 require "lsp"
-require "colorscheme"
+
+vim.cmd.colorscheme "everforest"
+vim.o.background = "light"

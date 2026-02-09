@@ -1,1 +1,1 @@
-require "config/line-theme/evil_lualine"
+require "config.line-theme.evil_lualine"

@@ -1,7 +1,4 @@
-local ok, gitsigns = pcall(require, "gitsigns")
-
-if ok then
-  gitsigns.setup {
+require("gitsigns").setup {
     signs = {
       add = { text = "+" },
       change = { text = "│" },
@@ -96,4 +93,4 @@ if ok then
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
     end,
   }
-end
+}

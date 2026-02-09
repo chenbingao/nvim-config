@@ -17,7 +17,7 @@ vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 vim.opt.termguicolors = true -- enabl 24-bit RGB color in the TUI
 vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
-vim.wo.cursorcolumn = true
+vim.opt.cursorcolumn = true
 
 -- Searching
 vim.opt.incsearch = true -- search as characters are entered
@@ -27,10 +27,17 @@ vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entere
 
 vim.lsp.inlay_hint.enable(true)
 
-vim.cmd "au TextYankPost * lua vim.highlight.on_yank {on_visual = true}"
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = vim.api.nvim_create_augroup("HighlightYank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank { on_visual = true }
+  end,
+})
 
 -- 开启自动读取
 vim.opt.autoread = true
+
+vim.g.python3_host_prog = "/usr/bin/python3"
 
 -- 当文件被修改时，自动重新读取文件 (需要触发某些事件)
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
