@@ -5,4 +5,8 @@ return {
       require "config.gitsigns"
     end,
   },
+  {
+    "esmuellert/codediff.nvim",
+    cmd = "CodeDiff",
+  },
 }
