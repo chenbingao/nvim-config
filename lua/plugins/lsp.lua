@@ -50,6 +50,7 @@ return {
               "rust-analyzer",
               "stylua",
               "typescript-language-server",
+              "vue-language-server",
               "pbls",
               "ormolu",
               "autotools-language-server",

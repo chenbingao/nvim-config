@@ -3,11 +3,17 @@ return {
     "romus204/tree-sitter-manager.nvim",
     config = function()
       local ensure_installed = {
+        "css",
+        "html",
+        "javascript",
         "json",
         "rust",
         "haskell",
-        "zig",
+        "scss",
+        "tsx",
         "typescript",
+        "vue",
+        "zig",
       }
       if vim.fn.has "mac" == 1 then
         vim.list_extend(ensure_installed, { "swift" })
