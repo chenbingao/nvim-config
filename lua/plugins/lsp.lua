@@ -40,6 +40,7 @@ return {
             local installed = registry.get_installed_package_names()
             local ensure_installed = {
               "html-lsp",
+              "json-lsp",
               "clangd",
               "neocmakelsp",
               "gersemi",
