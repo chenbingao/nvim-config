@@ -42,7 +42,7 @@ return {
       end, { force = true, all = false })
     end,
   },
-  { "limitLiu/nvim-treesitter-rescript" },
+
   {
     "mrcjkb/rustaceanvim",
     version = "^5",
