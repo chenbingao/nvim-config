@@ -2,14 +2,18 @@ return {
   {
     "romus204/tree-sitter-manager.nvim",
     config = function()
+      local ensure_installed = {
+        "rust",
+        "haskell",
+        "zig",
+        "typescript",
+      }
+      if vim.fn.has "mac" == 1 then
+        vim.list_extend(ensure_installed, { "swift" })
+      end
+
       require("tree-sitter-manager").setup {
-        ensure_installed = {
-          "rust",
-          "haskell",
-          "zig",
-          "swift",
-          "typescript",
-        },
+        ensure_installed = ensure_installed,
         auto_install = true,
       }
     end,
