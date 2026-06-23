@@ -36,9 +36,7 @@ return {
           return
         end
         local alias = text:lower()
-        metadata["injection.language"] = vim.filetype.match({ filename = "a." .. alias })
-          or aliases[alias]
-          or alias
+        metadata["injection.language"] = vim.filetype.match { filename = "a." .. alias } or aliases[alias] or alias
       end, { force = true, all = false })
     end,
   },
