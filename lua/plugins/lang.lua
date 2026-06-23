@@ -3,6 +3,7 @@ return {
     "romus204/tree-sitter-manager.nvim",
     config = function()
       local ensure_installed = {
+        "json",
         "rust",
         "haskell",
         "zig",
