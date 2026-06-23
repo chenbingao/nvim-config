@@ -67,6 +67,13 @@ return {
     end,
   },
   {
+    "kevinhwang91/nvim-ufo",
+    dependencies = { "kevinhwang91/promise-async" },
+    config = function()
+      require "config.ufo"
+    end,
+  },
+  {
     "nvim-lua/plenary.nvim",
     dependencies = {
       "nvim-pack/nvim-spectre",
