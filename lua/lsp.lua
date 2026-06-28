@@ -6,8 +6,6 @@ local servers = {
   cssls = "lsp.css",
   zls = "lsp.zig",
   clangd = "lsp.c",
-  cmake = "lsp.cmake",
-
   hls = "lsp.haskell",
   ts_ls = "lsp.ts",
   sourcekit = "lsp.swift",
